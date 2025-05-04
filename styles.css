@@ -156,9 +156,24 @@ body {
   text-align: justify;
 }
 
+.skills {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px;
+  color: var(--secondary-text-color);
+}
+
+@media only screen and (max-width: 600px) {
+  .skills {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
 .skills__header {
   color: var(--secondary-text-color);
-  text-align: center;
+  text-align: left;
   margin-bottom: 15px;
 }
 

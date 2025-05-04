@@ -269,6 +269,7 @@ body {
   color: var(--primary-text-color);
   text-align: left;
   margin-bottom: 10px;
+  font-size: 16px;
 }
 
 .additional-info__education-university-name {

@@ -216,6 +216,19 @@ body {
   padding-left: 20px;
 }
 
+.experiences__company-project-responsibilities-link {
+  text-decoration: none;
+}
+
+.experiences__company-project-responsibilities-link:hover {
+  text-decoration: underline;
+  color: (var(--border-color));
+}
+
+.experiences__company-project-responsibilities-link:visited {
+  color: (var(--border-color));
+}
+
 .additional-info {
   flex: 1 1 40%;
 }

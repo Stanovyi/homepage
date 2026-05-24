@@ -268,3 +268,8 @@ body {
   padding-right: 40px;
   color: var(--secondary-text-color);
 }
+
+.additional-info__education-university-speciality {
+  color: var(--primary-text-color);
+  font-size: 16px;
+}

@@ -321,6 +321,106 @@
                 </div>
               </div>
             </div>
+
+            <div id="container">
+              <button
+                class="duck-button"
+                id="duckButton"
+                onclick="showTerminalButton()"
+              >
+                🦆
+              </button>
+
+              <button
+                class="terminal-button"
+                id="terminalButton"
+                onclick="openTerminal()"
+              >
+                <div class="terminal-icon">💻</div>
+                <div>Press Ctrl + Alt + T</div>
+                <div style="font-size: 0.9em; margin-top: 5px; opacity: 0.7">
+                  Click to open terminal
+                </div>
+              </button>
+
+              <div class="terminal-window" id="terminalWindow">
+                <div class="terminal-header">
+                  <div class="terminal-title">user@dev-cv:~$</div>
+                  <div class="terminal-buttons">
+                    <div class="terminal-btn" style="background: #ff5f56"></div>
+                    <div class="terminal-btn" style="background: #ffbd2e"></div>
+                    <div class="terminal-btn" style="background: #27c93f"></div>
+                  </div>
+                </div>
+
+                <div class="terminal-content">
+                  <div class="loading-text">$ ./get_fun_fact.sh</div>
+                  <div class="loading-text">Loading developer secrets...</div>
+                  <div class="progress-bar">
+                    [<span id="progressBar"></span
+                    ><span class="cursor">█</span>]
+                    <span id="progressPercent">0%</span>
+                  </div>
+
+                  <div class="fun-fact" id="funFact">
+                    <div
+                      style="
+                        color: #27c93f;
+                        font-size: 1.3em;
+                        margin-bottom: 10px;
+                      "
+                    >
+                      ✓ Complete!
+                    </div>
+                    <div style="margin-top: 15px">
+                      <strong style="color: #ffbd2e">FUN_FACT:</strong
+                      ><br /><br />
+                      I debug with rubber ducks. Not because it works, but
+                      because they're the only ones who don't judge my variable
+                      names.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script>
+              function showTerminalButton() {
+                document.getElementById("duckButton").style.display = "none";
+                document.getElementById("terminalButton").classList.add("show");
+              }
+
+              function openTerminal() {
+                document.getElementById("terminalButton").style.display =
+                  "none";
+                document.getElementById("terminalWindow").classList.add("show");
+
+                startLoading();
+              }
+
+              function startLoading() {
+                const progressBar = document.getElementById("progressBar");
+                const progressPercent =
+                  document.getElementById("progressPercent");
+                const funFact = document.getElementById("funFact");
+
+                let progress = 0;
+                const interval = setInterval(() => {
+                  progress += 2;
+
+                  const bars = "█".repeat(Math.floor(progress / 5));
+                  progressBar.textContent = bars;
+                  progressPercent.textContent = progress + "%";
+
+                  if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                      funFact.classList.add("show");
+                    }, 500);
+                  }
+                }, 50);
+              }
+            </script>
           </div>
         </div>
       </div>
